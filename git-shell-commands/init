@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "while init the git-repositories"
+git init --bare /home/git/$1.git
+echo "init over"
