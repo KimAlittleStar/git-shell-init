@@ -1,4 +1,15 @@
 #!/bin/sh
 echo "while init the git-repositories"
-git init --bare /home/git/$1.git
+FILEPATH=~/
+FILEPATH=${FILEPATH%*/}
+tmp=$1
+name=${tmp%*.git}
+echo "repo = $name"
+if [ -n "$name" ] ; then
+echo "git init --bare $FILEPATH/$name.git"
+echo "init ok!!"
+else
+echo "please input right repo name!!!"
+fi
+#git init --bare /home/git/$1.git
 echo "init over"

@@ -13,3 +13,12 @@ HOMEPATH=~/
 fi
 cp -rf ./git-shell-commands $HOMEPATH
 # FILEPATH 确定了你需要将git仓库建立到那个文件夹下
+if [ -n "$FILEPATH" ] ; then
+echo "no zero FILEPATH = $FILEPATH"
+else
+echo "zero"
+FILEPATH=~/
+fi
+echo "#!/bin/sh" > ./git-shell-commands/list                                                    #将list文件替换为 '#!/bin/sh'
+echo "find $FILEPATH/ -maxdepth 3 -type d -name \"[\s\S]*.git\"" >> ./git-shell-commands/list   #将list文件追加内容
+sed -i '3c\FILEPATH='$FILEPATH ./git-shell-commands/init                                        #将init中的文本行替换
