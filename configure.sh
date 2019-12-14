@@ -22,5 +22,5 @@ else
 fi
 
 #echo "#!/bin/sh" >$HOMEPATH/git-shell-commands/list                                                       #将list文件替换为 '#!/bin/sh'
-sed -i '3c\find '$FILEPATH'/ -maxdepth 3 -type d -name \"[\s\S]*.git\"' $HOMEPATH/git-shell-commands/list #将list文件追加内容
-sed -i '3c\FILEPATH='$FILEPATH $HOMEPATH/git-shell-commands/init                                          #将init中的文本行替换
+sed -i '3c\find '$FILEPATH'/ -maxdepth 3 -type d -name \"[\\u4E00-\\u9FA5A-Za-z0-9_]*.git\"' $HOMEPATH/git-shell-commands/list #将list文件追加内容
+sed -i '3c\FILEPATH='$FILEPATH $HOMEPATH/git-shell-commands/init                                                               #将init中的文本行替换
