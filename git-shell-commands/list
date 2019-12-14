@@ -1,4 +1,6 @@
 #!/bin/sh
-echo "list of all git whien 3 depth ************"
+echo "list of all git with 3 depth ************"
+echo ""
 find ~/ -maxdepth 3 -type d -name "[\s\S]*.git"
-echo "list over"
+echo ""
+echo "list of all git over ********************"
